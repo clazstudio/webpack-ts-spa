@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Denis Novik</title>
+  <link rel="stylesheet" href="assets/fonts/gilroy.css" />
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+  <header class="header">
+  <div class="container">
+    <nav class="header__nav nav nav--mobile-hidden">
+      <ul class="nav__list hide-list">
+        <li class="nav__item nav__item--active"><a href="#">Home</a></li>
+        <li class="nav__item"><a href="#about">About me</a></li>
+        <li class="nav__item"><a href="#skills">Skills</a></li>
+        <li class="nav__item"><a href="#portfolio">Portfolio</a></li>
+        <li class="nav__item"><a href="#contacts">Contacts</a></li>
+      </ul>
+      <button class="nav__close" id="hideNavBt">close</button>
+      <ul class="lang-switch nav__lang hide-list">
+        <li class="lang-switch__item"><a href="#ru">RU</a></li>
+        <li class="lang-switch__item lang-switch__item--active"><a href="#eng">ENG</a></li>
+      </ul>
+    </nav>
+    <div class="header__content">
+      <h1 class="header__title">Denis<br />Novik</h1>
+      <p class="header__description">
+        UX | UI designer<br />
+        24 years old, Minsk
+      </p>
+      <button class="header__burger" id="showNavBt">open</button>
+    </div>
+    <img class="header__image"
+      srcset="assets/header_large.jpg 945w,
+              assets/header_small.jpg 317w"
+      sizes="(max-width: 375px) 317px"
+      alt="Header image">
+  </div>
+  </header>
+
+  <section id="about" class="section section--about">
+  <div class="container">
+    <h2 class="section__title">About me</h2>
+    <p class="section__p">Hi, I'm Denis – UX/UI designer from Minsk. I'm interested in design and everything connected with it.</p>
+    <p class="section__p">I'm studying at courses "Web and mobile design interfaces" in IT-Academy.</p>
+    <p class="section__p">Ready to implement excellent projects with wonderful people.</p>
+  </div>
+  </section>
+
+  <section id="skills" class="section section--skills">
+  <div class="container">
+    <h2 class="section__title">Skills</h2>
+    <p class="section__p">I work in such programs as</p>
+    <ul class="skills hide-list">
+      <li class="skill skills__item">
+        <img class="skill__image" src="assets/skills/ps.svg" alt="Adobe Photoshop">
+        <p class="skill__title">Adobe<br />Photoshop</p>
+        <div class="skill__rating rating">
+          <span class="rating__star rating__star--active"></span>
+          <span class="rating__star rating__star--active"></span>
+          <span class="rating__star rating__star--active"></span>
+          <span class="rating__star rating__star--active"></span>
+          <span class="rating__star"></span>
+        </div>
+      </li>
+      <li class="skill skills__item">
+        <img class="skill__image" src="assets/skills/ai.svg" alt="Adobe Illustrator">
+        <p class="skill__title">Adobe<br />Illustrator</p>
+        <div class="skill__rating rating">
+          <span class="rating__star rating__star--active"></span>
+          <span class="rating__star rating__star--active"></span>
+          <span class="rating__star rating__star--active"></span>
+          <span class="rating__star"></span>
+          <span class="rating__star"></span>
+        </div>
+      </li>
+      <li class="skill skills__item">
+        <img class="skill__image" src="assets/skills/ae.svg" alt="Adobe After Effects">
+        <p class="skill__title">Adobe<br />After Effects</p>
+        <div class="skill__rating rating">
+          <span class="rating__star rating__star--active"></span>
+          <span class="rating__star rating__star--active"></span>
+          <span class="rating__star rating__star--active"></span>
+          <span class="rating__star rating__star--active"></span>
+          <span class="rating__star"></span>
+        </div>
+      </li>
+      <li class="skill skills__item">
+        <img class="skill__image" src="assets/skills/figma.svg" alt="Figma">
+        <p class="skill__title">Figma</p>
+        <div class="skill__rating rating">
+          <span class="rating__star rating__star--active"></span>
+          <span class="rating__star rating__star--active"></span>
+          <span class="rating__star rating__star--active"></span>
+          <span class="rating__star rating__star--active"></span>
+          <span class="rating__star"></span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  </section>
+
+  <footer></footer>
+
+  <script>
+    const headerNav = document.getElementsByClassName("header__nav")[0];
+    const navLinks = document.getElementsByClassName("nav__list")[0];
+
+    function showNavBar() {
+      headerNav.classList.remove("nav--mobile-hidden");
+      document.body.style.position = 'fixed';
+    }
+
+    function hideNavBar() {
+      headerNav.classList.add("nav--mobile-hidden");
+      document.body.style.position = '';
+    }
+
+    document.getElementById("showNavBt").addEventListener("click", showNavBar);
+    document.getElementById("hideNavBt").addEventListener("click", hideNavBar);
+    navLinks.addEventListener("click", () => {
+      hideNavBar();
+    });
+    hideNavBar();
+  </script>
+</body>
+</html>
